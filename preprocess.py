@@ -1,9 +1,9 @@
-import sys
-from pdf2image import convert_from_path, convert_from_bytes
+from pathlib import Path
 import cv2
+from autocorrect import Speller
 class preprocess(object):
     def __init__(self):
-        self.name = "preprocess"
+        self.file = Path(file_path)
 
     def cv_grayscale(image):
         return cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -68,8 +68,3 @@ class preprocess(object):
     def cv_opening(image):
         kernel = np.ones((5,5),np.uint8)
         return cv2.morphologyEx(image, cv2.MORPH_OPEN, kernel)
-
-    # convert pdf to jpg
-    def pdf_convert(path):
-        image = convert_from_path(path, fmt='jpg')
-        return image
