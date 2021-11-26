@@ -1,5 +1,4 @@
 import sys
-sys.path.append('/Users/vsevolod_mineev/miniconda3/lib/python3.9/site-packages')
 from pdf2image import convert_from_path, convert_from_bytes
 import cv2
 class preprocess(object):
