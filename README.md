@@ -18,23 +18,23 @@ poetry run
 
 Run the script using the following format:
 ```
-poetry run python3 detect main.py --input_file='samples/jpg.jpg' --output_file='output.txt'
+poetry run python3 main.py detect --input_file='samples/jpg.jpg' --output_file='output.txt'
 ```
 ```
 Options:
-  --input_file=’path’         Input file to perform OCR on.
-  --output_file=’path’        Output file to write strig to.
-  --log_file=’path’           File where the logs should go.
+  --input_file ’path’         Input file to perform OCR on.
+  --output_file ’path’        Output file to write strig to.
+  --log_file ’path’           File where the logs should go.
   --verbose                   Output detailed logs for this OCR.
-  --grayscale                 Grayscale image
-  --auto_correct              Enable OCR auto correct.
-  --denoise                   Denoise image.
-  --threshold                 Threshold image.
-  --remove_horizontal_lines   Remove horizontal lines on image.
-  --remove_vertical_lines     Remove vertical lines from image.
-  --dilate_bitwise_and        Perform dilate + bitwise_and.
-  --erode                     Erode image.
-  --opening                   Open image. Erosion + Dilation
+  --grayscale True            Grayscale image
+  --auto_correct True         Enable OCR auto correct.
+  --denoise True              Denoise image.
+  --threshold True            Threshold image.
+  --remove_horizontal_lines True   
+  --remove_vertical_lines True 
+  --dilate_bitwise_and True   Perform dilate + bitwise_and.
+  --erode True                Erode image.
+  --opening True              Open image. Erosion + Dilation
   --help                      Show this message and exit.
 ```
 
@@ -42,13 +42,13 @@ Options:
 
 JPG:
 ```
-python3 code_test.py --input_file='samples/jpg.jpg' --grayscale --denoise --auto_correct
+poetry run python3 main.py detect --input_file='samples/jpg.jpg' --grayscale True --denoise True --auto_correct True
 ```
 PNG:
 ```
-python3 code_test.py --input_file='samples/png.png' --grayscale --threshold --remove_horizontal_lines --dilate_bitwise_and --auto_correct
+poetry run python3 main.py detect --input_file='samples/png.png' --threshold True --remove_horizontal_lines True --dilate_bitwise_and True --auto_correct True
 ```
 PDF:
 ```
-python3 code_test.py --input_file='samples/pdf.pdf'
+poetry run python3 main.py detect --input_file='samples/pdf.pdf'
 ```
