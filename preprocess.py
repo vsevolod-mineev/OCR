@@ -6,7 +6,7 @@ class preprocess(object):
     def __init__(self):
         self.name = "preprocess"
 
-    def grayscale(image):
+    def cv_grayscale(image):
         return cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
     # auto correct that only corrects substitutions.

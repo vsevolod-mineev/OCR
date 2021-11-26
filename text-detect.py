@@ -3,15 +3,18 @@ sys.path.append('/Users/vsevolod_mineev/miniconda3/lib/python3.9/site-packages')
 from PIL2CV import PIL2CV
 from preprocess import preprocess
 from file_type_detector import FileTypeDetector
+from imageConverter import ImageConverter
 import pytesseract
 import fire
 def text_detect(input_file="samples/pdf.pdf",output_file = "output.txt",grayscale=False,auto_correct=False,denoise=False,threshold=False,remove_horizontal_lines=False,remove_vertical_lines=False,dilate_bitwise_and=False,erode=False,opening=False):
-    image_array = preprocess.pdf_convert(input_file)
+    image_array = ImageConverter(input_file).convert()
     length = len(image_array)
     x=range(length)   
     for i in x:
         image_data= PIL2CV.pil_to_cv(image_array[i])
         # applying preprocessing to image_data given that it has been specified as an a desired option to the script.
+        if grayscale is True:
+            image_data = cv_grayscale(image_data)
         if denoise is True:
             image_data = cv_no_noise(image_data)
         if threshold is True:
