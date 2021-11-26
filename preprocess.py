@@ -43,7 +43,7 @@ class preprocess(object):
         return cv2.threshold(image, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[1]
 
     # dilation + bitwise_and
-    def cv_dilate_bitwise_and(image):
+    def cv_dilate_bitwise_and(image,input_name):
         kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (10,1))
         dilate = cv2.dilate(image, kernel, iterations=2)
         cnts = cv2.findContours(dilate, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)

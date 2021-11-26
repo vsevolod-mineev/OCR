@@ -25,7 +25,7 @@ def text_detect(input_file="samples/pdf.pdf",output_file = "output.txt",grayscal
         if remove_vertical_lines is True:
             image_data = preprocess.cv_remove_vertical_lines(image_data)
         if dilate_bitwise_and is True:
-            image_data = preprocess.cv_dilate_bitwise_and(image_data)
+            image_data = preprocess.cv_dilate_bitwise_and(image_data,input_file)
         if erode is True:
             image_data = preprocess.cv_erode(image_data)
         if opening is True:
