@@ -24,8 +24,6 @@ poetry run python3 main.py detect --input_file='samples/jpg.jpg' --output_file='
 Options:
   --input_file ’path’         Input file to perform OCR on.
   --output_file ’path’        Output file to write strig to.
-  --log_file ’path’           File where the logs should go.
-  --verbose                   Output detailed logs for this OCR.
   --grayscale True            Grayscale image
   --auto_correct True         Enable OCR auto correct.
   --denoise True              Denoise image.
