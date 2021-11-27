@@ -3,7 +3,7 @@ from pathlib import Path
 from pdf2image import convert_from_path
 from PIL import Image
 
-from filetypeDetector import FileTypeDetector
+from filetypeDetector import filetypeDetector
 
 
 class ImageConverter(object):
@@ -12,13 +12,13 @@ class ImageConverter(object):
 
     def convert(self) -> []:
         images = []
-        filetype = FileTypeDetector(self.file_path).detect()
-        if filetype == FileTypeDetector.FILETYPE_PDF:
+        filetype = filetypeDetector(self.file_path).detect()
+        if filetype == filetypeDetector.FILETYPE_PDF:
             images = convert_from_path(self.file_path)
-            print("Detected filetype: PDF, " + str(len(images)) + " page(s)")
+            print("Detected filetype: pdf, " + str(len(images)) + " page(s)")
         elif filetype in [
-                FileTypeDetector.FILETYPE_JPEG, FileTypeDetector.FILETYPE_PNG,
-                FileTypeDetector.FILETYPE_TIFF
+                filetypeDetector.FILETYPE_JPEG, filetypeDetector.FILETYPE_PNG,
+                filetypeDetector.FILETYPE_TIFF
         ]:
             images.append(Image.open(self.file_path))
             print("Detected filetype: " + filetype)

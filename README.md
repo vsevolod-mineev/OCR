@@ -18,7 +18,7 @@ poetry run
 
 Run the script using the following format:
 ```
-poetry run python3 main.py detect --input_file='samples/jpg.jpg' --output_file='output.txt'
+poetry run python3 main.py detect --input_file='input/jpg.jpg' --output_file='output.txt'
 ```
 ```
 Options:
@@ -40,13 +40,13 @@ Options:
 
 JPG:
 ```
-poetry run python3 main.py detect --input_file='samples/jpg.jpg' --grayscale True --denoise True --auto_correct True
+poetry run python3 main.py detect --input_file='input/jpg.jpg' --grayscale True --denoise True --auto_correct True
 ```
 PNG:
 ```
-poetry run python3 main.py detect --input_file='samples/png.png' --threshold True --remove_horizontal_lines True --dilate_bitwise_and True --auto_correct True
+poetry run python3 main.py detect --input_file='input/png.png' --threshold True --remove_horizontal_lines True --dilate_bitwise_and True --auto_correct True
 ```
 PDF:
 ```
-poetry run python3 main.py detect --input_file='samples/pdf.pdf'
+poetry run python3 main.py detect --input_file='input/pdf.pdf'
 ```

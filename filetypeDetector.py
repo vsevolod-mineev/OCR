@@ -1,7 +1,7 @@
 from pathlib import Path
 
 
-class FileTypeDetector:
+class filetypeDetector(object):
     FILETYPE_PDF = 'pdf'
     FILETYPE_TIFF = 'tiff'
     FILETYPE_JPEG = 'jpeg'
@@ -37,7 +37,3 @@ class FileTypeDetector:
             return self.FILETYPE_PNG
 
         return None
-
-if __name__ == "__main__":
-    filetype = FileTypeDetector('app/samples/pdf.pdf').detect()
-    print(filetype)

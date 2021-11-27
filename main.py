@@ -1,12 +1,16 @@
 import sys
+import os
 sys.path.append('/Users/vsevolod_mineev/miniconda3/lib/python3.9/site-packages')
-from PIL2CV import PIL2CV
-from preprocess import preprocess
-from filetypeDetector import FileTypeDetector
-from imageConverter import ImageConverter
+from app.PIL2CV import PIL2CV
+from app.preprocess import preprocess
+from filetypeDetector import filetypeDetector
+from app.imageConverter import ImageConverter
 import pytesseract
 import fire
-def text_detect(input_file="samples/pdf.pdf",output_file = "output.txt",grayscale=False,auto_correct=False,denoise=False,threshold=False,remove_horizontal_lines=False,remove_vertical_lines=False,dilate_bitwise_and=False,erode=False,opening=False):
+
+BASE_DIR = os.path.dirname(__file__)
+
+def text_detect(input_file="input/pdf.pdf",output_file = "output.txt",grayscale=False,auto_correct=False,denoise=False,threshold=False,remove_horizontal_lines=False,remove_vertical_lines=False,dilate_bitwise_and=False,erode=False,opening=False):
     print("OCR has started")
     image_array = ImageConverter(input_file).convert()
     length = len(image_array)
@@ -41,7 +45,10 @@ def text_detect(input_file="samples/pdf.pdf",output_file = "output.txt",grayscal
     if auto_correct is True:
         result = preprocess.spell_correct_ocr(result)
     # writing output
-    text_file = open(output_file, "w")
+    path = os.path.join(BASE_DIR, 'output')
+    os.makedirs(path, exist_ok=True)
+    filepath = os.path.join(path,output_file)
+    text_file = open(filepath, "w")
     text_file.write(result)
     text_file.close()
     print("OCR has finished")

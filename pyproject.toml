@@ -6,11 +6,10 @@ description = "OCR with CLI fro JPG, PNG and PDF"
 authors = ["Vsevolod Mineev <vsevolod.mineev@gmail.com>"]
 license = "MIT License"
 packages = [
-    { include = "preprocess.py" },
+    { include = "app/preprocess.py" },
     { include = "filetypeDetector.py" },
-    { include = "imageConverter.py" },
-    { include = "PIL2CV.py" },
-    { include = "preprocess.py" },
+    { include = "app/imageConverter.py" },
+    { include = "app/PIL2CV.py" },
 
 ]
 
