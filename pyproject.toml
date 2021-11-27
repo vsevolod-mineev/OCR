@@ -1,6 +1,6 @@
 
 [tool.poetry]
-name = "ocr"
+name = "OCR_for_PNG_JPG_PDF"
 version = "0.1.0"
 description = "OCR with CLI fro JPG, PNG and PDF"
 authors = ["Vsevolod Mineev <vsevolod.mineev@gmail.com>"]
