@@ -2,7 +2,7 @@ import sys
 sys.path.append('/Users/vsevolod_mineev/miniconda3/lib/python3.9/site-packages')
 from PIL2CV import PIL2CV
 from preprocess import preprocess
-from file_type_detector import FileTypeDetector
+from filetypeDetector import FileTypeDetector
 from imageConverter import ImageConverter
 import pytesseract
 import fire
