@@ -1,6 +1,5 @@
 import sys
 import os
-sys.path.append('/Users/vsevolod_mineev/miniconda3/lib/python3.9/site-packages')
 from app.PIL2CV import PIL2CV
 from filetypeDetector import filetypeDetector
 from app.preprocess import preprocess
