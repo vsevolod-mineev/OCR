@@ -1,9 +1,9 @@
 import sys
 import os
-from app.PIL2CV import PIL2CV
-from filetypeDetector import filetypeDetector
-from app.preprocess import preprocess
-from app.imageConverter import ImageConverter
+from dir.PIL2CV import PIL2CV
+from dir.filetypeDetector import filetypeDetector
+from dir.preprocess import preprocess
+from dir.imageConverter import ImageConverter
 import pytesseract
 import fire
 
