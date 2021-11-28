@@ -1,3 +1,4 @@
+#usr/bin/python3.9
 import sys
 import os
 from dir.PIL2CV import PIL2CV
