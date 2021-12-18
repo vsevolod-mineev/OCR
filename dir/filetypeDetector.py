@@ -1,5 +1,5 @@
+#usr/bin/python3.9
 from pathlib import Path
-
 
 class filetypeDetector(object):
     FILETYPE_PDF = 'pdf'

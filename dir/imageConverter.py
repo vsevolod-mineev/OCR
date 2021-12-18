@@ -1,3 +1,4 @@
+#usr/bin/python3.9
 from pathlib import Path
 
 from pdf2image import convert_from_path

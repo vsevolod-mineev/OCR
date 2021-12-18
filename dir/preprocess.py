@@ -1,3 +1,4 @@
+#usr/bin/python3.9
 from pathlib import Path
 import cv2
 from autocorrect import Speller
